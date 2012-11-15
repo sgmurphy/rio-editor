@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RIO.Editor Demo</title>
+	<link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+	
+<h1>RIO Editor Demo</h1>
+
+<div style="float: left;">
+	<textarea id="example-1"></textarea>
+</div>
+
+<div style="float: right;">
+	<textarea id="example-2"></textarea>
+</div>
+
+<script type="text/javascript" src="../src/Util.js"></script>
+<script type="text/javascript" src="../src/Editor.js"></script>
+<script type="text/javascript" src="../src/Toolbar.js"></script>
+<script type="text/javascript" src="../src/Button.js"></script>
+<script type="text/javascript" src="../src/Buttons.js"></script>
+<script type="text/javascript" src="../src/Transformer.js"></script>
+<script type="text/javascript">
+RIO.Buttons.help.url = 'http://google.com';
+
+var toolbar = new RIO.Toolbar([
+	new RIO.Button(RIO.Buttons.bold),
+	new RIO.Button(RIO.Buttons.italic),
+	new RIO.Button(RIO.Buttons.separator),
+	new RIO.Button(RIO.Buttons.olist),
+	new RIO.Button(RIO.Buttons.ulist),
+	new RIO.Button(RIO.Buttons.heading),
+	new RIO.Button(RIO.Buttons.hr),
+	new RIO.Button(RIO.Buttons.separator),
+	new RIO.Button(RIO.Buttons.link),
+	new RIO.Button(RIO.Buttons.image),
+	new RIO.Button(RIO.Buttons.code),
+	new RIO.Button(RIO.Buttons.quote),
+	new RIO.Button(RIO.Buttons.separator),
+	new RIO.Button(RIO.Buttons.undo),
+	new RIO.Button(RIO.Buttons.redo),
+	new RIO.Button(RIO.Buttons.help)
+]);
+
+var toolbar2 = new RIO.Toolbar([
+	new RIO.Button(RIO.Buttons.bold),
+	new RIO.Button(RIO.Buttons.italic),
+	new RIO.Button(RIO.Buttons.separator),
+	new RIO.Button(RIO.Buttons.olist),
+	new RIO.Button(RIO.Buttons.ulist),
+	new RIO.Button(RIO.Buttons.link),
+	new RIO.Button(RIO.Buttons.separator),
+	new RIO.Button(RIO.Buttons.undo),
+	new RIO.Button(RIO.Buttons.redo)
+]);
+
+var editor1 = new RIO.Editor({
+	input: document.getElementById('example-1'),
+	toolbars: [toolbar],
+	transformer: new RIO.Transformer()
+});
+
+var editor2 = new RIO.Editor({
+	input: document.getElementById('example-2'),
+	toolbars: [toolbar2],
+	transformer: new RIO.Transformer()
+});
+</script>
+
+</body>
+</html>
